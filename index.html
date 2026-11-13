@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="V-ACT Tiếng Việt — Hệ thống lý thuyết, ví dụ, thẻ ghi nhớ và bài kiểm tra ôn thi Đánh giá năng lực môn Tiếng Việt." />
+  <meta name="theme-color" content="#F5F5F0" />
+  <title>V-ACT Tiếng Việt — Học sâu từng tầng nghĩa</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2327272A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%23F5F5F0' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#app" data-skip>Bỏ qua điều hướng</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#/" aria-label="V-ACT Tiếng Việt — Trang chủ">
+        <span class="brand-mark" aria-hidden="true">V</span>
+        <span class="brand-text">
+          <strong>V-ACT</strong>
+          <small>Tiếng Việt</small>
+        </span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Điều hướng chính">
+        <a href="#/lo-trinh" data-nav="lo-trinh">Lộ trình</a>
+        <a href="#/on-tap" data-nav="on-tap">Ôn tập</a>
+        <a href="#/kiem-tra" data-nav="kiem-tra">Kiểm tra</a>
+        <a href="#/ai" data-nav="ai">AI luyện tập</a>
+        <a href="#/tien-do" data-nav="tien-do">Tiến độ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn search-trigger" type="button" aria-label="Tìm kiếm bài học" title="Tìm kiếm ( / )">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+
+        <a class="progress-mini" href="#/tien-do" aria-label="Tiến độ học tập">
+          <svg viewBox="0 0 36 36" aria-hidden="true">
+            <circle class="ring-bg" cx="18" cy="18" r="15" />
+            <circle class="ring-fg" id="headerRing" cx="18" cy="18" r="15" />
+          </svg>
+          <span class="progress-mini-label" id="headerProgressLabel">0%</span>
+        </a>
+
+        <button class="icon-btn menu-trigger" type="button" id="menuTrigger" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileNav">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Điều hướng di động" hidden>
+      <a href="#/lo-trinh">Lộ trình học</a>
+      <a href="#/on-tap">Ôn lại kiến thức</a>
+      <a href="#/kiem-tra">Bài kiểm tra</a>
+      <a href="#/ai">AI luyện tập <span class="chip chip-gold">Sắp có</span></a>
+      <a href="#/tien-do">Tiến độ của tôi</a>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark small" aria-hidden="true">V</span>
+        <div>
+          <strong>V-ACT Tiếng Việt</strong>
+          <p>Học có cấu trúc. Hiểu đến tận tầng nghĩa.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#/lo-trinh">Lộ trình</a>
+        <a href="#/on-tap">Ôn tập</a>
+        <a href="#/kiem-tra">Kiểm tra</a>
+        <a href="#/ai">AI luyện tập</a>
+      </div>
+      <p class="footer-note">
+        Nội dung được biên soạn, chọn lọc và cấu trúc lại từ bộ tài liệu luyện thi V-ACT (8 phần PDF).
+        Trang web chỉ phục vụ mục đích học tập cá nhân.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Search overlay -->
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-panel" role="dialog" aria-modal="true" aria-label="Tìm kiếm bài học">
+      <div class="search-head">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <input id="searchInput" type="search" placeholder="Tìm bài học, khái niệm, tác giả…" autocomplete="off" aria-label="Từ khoá tìm kiếm" />
+        <button class="icon-btn" id="searchClose" type="button" aria-label="Đóng tìm kiếm">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="search-body">
+        <p class="search-hint" id="searchHint">Nhập từ khoá để tìm trong 18 bài học.</p>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+      <div class="search-foot">
+        <span><kbd>Esc</kbd> để đóng</span>
+        <span><kbd>↵</kbd> để mở kết quả đầu tiên</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/data-topics.js"></script>
+  <script src="assets/js/data-lessons-a.js"></script>
+  <script src="assets/js/data-lessons-b.js"></script>
+  <script src="assets/js/data-lessons-c.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
